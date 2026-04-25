@@ -1,0 +1,433 @@
+/* 1. Importa il font da Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+/* 2. Applica il font a tutto il sito */
+body {
+    font-family: 'Fredoka', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 3. Un tocco extra per i titoli (per renderli più "Sound") */
+h1, h2, h3 {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.corpo{
+	padding-left: 20px;
+    padding-right: 20px;
+}
+
+a {
+	color: white;
+    text-decoration: none;
+    font-weight: 600;
+    /* Un po' di padding interno rende il link più facile da cliccare */
+    padding: 5px 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #778da9;
+}
+
+.footer {
+	padding: 5px;
+	color: white;
+	background-color: #1b263b;
+	margin-top: 80px;
+    text-align: center;
+}
+
+#nav{
+	padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+	display: flow-root;
+	background-color: #0d1b2a;
+}
+
+.menu-utente {
+	font-size: 30px;
+    
+    /* 1. Rimuove i pallini e i margini di default */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+    /* 2. Allineamento del testo (opzionale: center, left o right) */
+    text-align: center;
+}
+
+.menu-utente li {
+	color: white !important;
+    /* 3. Il trucco magico: trasforma i blocchi verticali in elementi in riga */
+    display: inline-block;
+    /* 4. Spaziatura tra le voci (visto che non abbiamo il 'gap') */
+    margin: 0 15px;
+}
+
+#search{
+	padding: 10px;
+    border-radius: 10px;
+}
+
+#searchBtn{
+	background-color: #778da9;
+    color: white;
+	padding: 10px;
+    border-radius: 10px;
+}
+
+#searchBtn:hover{
+	background-color: #00b4d8;
+}
+
+#copertina{
+	width: 100%;
+    height: 400px;
+}
+
+.menu-principale {
+	margin: auto;
+	font-size: 30px;
+    
+    /* 1. Rimuove i pallini e i margini di default */
+    list-style-type: none;
+    margin-top: -100px;
+    padding: 20px;
+    
+    display: flex;
+    justify-content: center;
+    
+    text-align: center;
+	border-radius: 12px;
+    
+    margin-bottom: 30px;
+}
+
+.card {
+	padding: 20px;
+	height: 100px;
+    width: 250px;
+	background-color: #00b4d8 !important;
+    border-radius: 10px;
+    
+    /* 3. Il trucco magico: trasforma i blocchi verticali in elementi in riga */
+    display: inline-block;
+    /* 4. Spaziatura tra le voci (visto che non abbiamo il 'gap') */
+    margin: 0 15px;
+    transition: transform 0.1s ease-in-out;
+}
+
+.menu-principale li a{
+	color: white;
+}
+
+.menu-principale .card:hover {
+    transform: translateY(5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.container{
+	display: flex;
+    justify-content: center;
+}
+
+.registrati{
+	padding: 30px;
+	width: 700px;
+    height: 600px;
+	background-color: #e0e1dd;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px grey;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.accedi{
+	padding: 30px;
+	width: 700px;
+    height: 300px;
+	background-color: #e0e1dd;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px grey;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.registrati input{
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.accedi input{
+	height: 30px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.insert{
+	width: 100%;
+}
+
+#sub{
+	height: 40px;
+	font-size: 15px;
+	background-color: #778da9;
+    color: white;
+    border-radius: 10px;
+}
+
+#sub:hover{
+	background-color: #cdb4db;
+}
+
+.radio{
+	width: 30px;
+}
+
+#tipo{
+	display: flex;
+}
+
+#tipo p{
+	margin-top: 8px;
+    margin-right: 8px;
+}
+
+.registrati:hover{
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+	transform: translateY(-5px);
+}
+
+.eventi {
+    display: flex;          /* Attiva Flexbox */
+    flex-wrap: wrap;       /* Permette alle card di andare a capo */
+    gap: 20px;             /* Crea spazio tra le card senza usare i margini */
+    justify-content: flex-start; /* Allinea le card a sinistra (usa 'center' se le vuoi al centro) */
+    padding: 20px;         /* Un po' di respiro dal bordo */
+}
+
+/* 2. La singola card dell'evento */
+.eventCard {
+	color: black;
+    background-color: #f9f9f9;
+    border: 2px solid #1b263b;   /* Un bordino leggero */
+    border-radius: 8px;       /* Angoli arrotondati */
+    padding: 15px;            /* Spazio interno alla card */
+
+    /* Questo è il punto chiave per metterle in riga: */
+    flex: 0 1 calc(33.333% - 20px); 
+    /* Spiegazione del calcolo sopra:
+       - 33.333% fa stare esattamente 3 card per riga.
+       - Sottraiamo il 'gap' (20px) per evitare che strabordino per via dello spazio in mezzo.
+       Se ne vuoi 4 per riga usa 25%, se ne vuoi 2 usa 50%.
+    */
+
+    box-sizing: border-box; /* Assicura che padding e bordi non sballino le larghezze */
+}
+
+.eventCard p{
+	margin: 0;
+}
+
+.eventCard:hover{
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+	transform: translateY(-5px);
+}
+
+.statoEvento{
+	color: grey;
+    font-style: italic;
+}
+
+.pEvento{
+	padding: 5px;
+}
+
+.spanEvento{
+	font-weight: 600;
+}
+
+.pageEvento{
+	display: flex;
+    flex-direction: column;
+    align-items: flex-start; /*allinea a sinistra*/
+    justify-content: flex-start; /*allinea in alto*/
+    width: 700px;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px grey;
+    
+    color: black;
+    background-color: #f9f9f9;
+    border: 2px solid #1b263b;   /* Un bordino leggero */
+    padding: 15px;            /* Spazio interno alla card */
+}
+
+#partecipa{
+	width: 100%;
+	height: 40px;
+	font-size: 15px;
+	background-color: #778da9;
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+
+#partecipa:hover{
+	background-color: #00b4d8;
+}
+
+.partecipaDiv{
+	width: 700px;
+	margin: 0 auto;
+    background-color: #caf0f8;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px grey;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse; /* Inverte l'ordine per gestire l'effetto hover correttamente */
+    justify-content: flex-end;
+}
+
+.rating input { 
+	display: none; 
+} /* Nasconde i pallini del radio button */
+
+.rating label {
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+/* Colora le stelle selezionate e quelle precedenti al passaggio del mouse */
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked ~ label {
+  	color: #f5b301;
+}
+
+/* --- SEZIONE RECENSIONI --- */
+
+/* Contenitore principale: identico a .pageEvento */
+.containerRecensione {
+    display: block !important;
+    width: 700px !important;
+    max-width: 700px !important;
+    margin: 40px auto !important; /* Centra orizzontalmente */
+    padding: 0 !important; /* Rimuoviamo il padding qui per non sballare i calcoli */
+    box-sizing: border-box;
+    clear: both; /* Evita interferenze con elementi flottanti */
+}
+
+/* Titolo della sezione */
+.containerRecensione h2 {
+    text-align: center;
+}
+
+/* Il modulo per scrivere */
+.formRecensione {
+    width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px !important;
+    border-radius: 20px;
+    border: 1px solid #e0e1dd;
+    box-sizing: border-box !important; /* Include il padding nei 700px */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* La textarea non deve mai uscire dai bordi */
+.testo-recensione {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.testo-recensione textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 120px;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #778da9;
+    box-sizing: border-box !important; /* Fondamentale per non esplodere a 924px */
+}
+
+/* Bottone identico ai tuoi pulsanti sito */
+.formRecensione button {
+    padding: 10px 25px;
+    background-color: #778da9;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.formRecensione button:hover {
+    background-color: #00b4d8;
+}
+
+/* Box dei commenti pubblicati*/
+.recensione-box {
+    width: 800px; /* Larghezza piena come il resto */
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border-left: 6px solid #00b4d8; /* Un richiamo al colore del box evento sopra */
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.05);
+    box-sizing: border-box;
+}
+
+.proponiEvento{
+	width: 700px;
+	margin: 0 auto;
+    background-color: #00b4d8;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    border: 1 solid #778da9;
+    border-radius: 20px;
+}
+
+.proponiEvento h4{
+	color: white;
+}
+
+.proponiEvento input{
+	width: 98.5%;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}
+
+.proponiEvento .proponibtn{
+	margin-bottom: 20px;
+    margin-top: 20px;
+    width: 100%;
+    background-color: #778da9;
+    color: white;
+}
+
+.proponiEvento .proponibtn:hover{
+	background-color: #cdb4db;
+}
